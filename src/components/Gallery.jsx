@@ -3,7 +3,7 @@ import cabinet from "../assets/services/Cabinet.jpg"
 import ceiling from "../assets/services/Ceiling.jpg"
 import louvers from "../assets/services/Louvers.jpg"
 import kitchen from "../assets/services/ModularKitchen.jpg"
-import table from "../assets/services/table.jpg"
+import table from "../assets/services/Table.jpg"
 
 function Gallery() {
   return (
