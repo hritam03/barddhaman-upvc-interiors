@@ -1,5 +1,6 @@
 import gallery1 from "../assets/gallery1.jpg";
 import kitchen from "../assets/kitchen.jpg"
+import livingroom from "../assets/livingroom.jpg";
 
 function Gallery() {
   return (
@@ -9,6 +10,7 @@ function Gallery() {
       <div className="gallery-grid">
         <img src={gallery1} alt="UPVC Interior Work" />
         <img src={kitchen} alt="UPVC"/>
+        <img src={livingroom} alt="UPVC Living Room"/>
       </div>
     </section>
   );

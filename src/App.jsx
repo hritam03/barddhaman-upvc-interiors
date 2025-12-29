@@ -2,10 +2,10 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import About from "./components/AboutContact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import AboutContact from "./components/AboutContact";
 
 function App() {
   return (
@@ -15,8 +15,7 @@ function App() {
         <Hero />
         <Services />
         <Gallery />
-        <About />
-        <Contact />
+        <AboutContact />
       </main>
       <Footer />
       <WhatsAppButton />
