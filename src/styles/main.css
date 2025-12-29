@@ -262,7 +262,39 @@ section {
   }
 }
 
+/* =========================
+   HERO TEXT ANIMATION
+========================= */
 
+/* Initial hidden state */
+.hero-content h2,
+.hero-content p,
+.hero-content .btn-primary {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* Animate in */
+.hero-content .animate {
+  animation: heroFadeUp 0.9s ease forwards;
+}
+
+/* Stagger delays */
+.hero-content .delay-1 {
+  animation-delay: 0.35s;
+}
+
+.hero-content .delay-2 {
+  animation-delay: 0.7s;
+}
+
+/* Keyframes */
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* =========================
    SERVICES SECTION
@@ -372,7 +404,6 @@ section {
   top: 20px;
   bottom: 20px;
   width: 4px;
-  background: #c89b3c;
   border-radius: 4px;
 }
 
@@ -454,7 +485,7 @@ section {
   color: #cccccc;
   text-align: center;
   padding: 1.6rem;
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 /* =========================
@@ -611,3 +642,98 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   KEY FEATURES SECTION
+========================= */
+
+.key-features {
+  padding: 4rem 1.5rem;
+  background: #f6f6f6;
+  text-align: center;
+}
+
+.key-features h2 {
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  white-space: nowrap;      /* 👈 keeps it in one line */
+}
+
+
+.features-grid {
+  display: flex;
+  gap: 2rem;
+  overflow-x: hidden;
+  align-items: stretch;
+}
+
+
+
+
+
+/* CARD */
+.feature-card {
+  width: 170px;
+  height: 170px;
+
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* 👈 horizontal center */
+  justify-content: space-between; /* 👈 icon top, text bottom */
+
+  padding: 1.5rem 1rem;
+  text-align: center;
+
+  flex-shrink: 0;
+}
+
+
+
+/* ICON */
+.feature-card img {
+  width: 64px;          /* ⬆️ bigger icon */
+  height: 64px;
+  object-fit: contain;
+}
+
+
+
+/* SCROLL ON HOVER */
+.key-features:hover .features-grid {
+  scroll-behavior: auto;
+}
+
+
+
+/* TEXT */
+.feature-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.3;
+  margin: 0;
+
+  min-height: 2.6em; /* 👈 equal text space for all */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr); /* tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* mobile */
+  }
+}
+
+
