@@ -1,3 +1,5 @@
+import whatsappIcon from "../assets/images/whatsapp.png";
+
 function WhatsAppButton() {
   return (
     <a
@@ -5,10 +7,12 @@ function WhatsAppButton() {
       className="whatsapp-float"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
     >
-      💬
+      <img src={whatsappIcon} alt="WhatsApp" />
     </a>
   );
 }
 
 export default WhatsAppButton;
+
