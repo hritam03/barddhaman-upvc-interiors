@@ -1,6 +1,9 @@
-import gallery1 from "../assets/gallery1.jpg";
-import kitchen from "../assets/kitchen.jpg"
-import livingroom from "../assets/livingroom.jpg";
+import balancer from "../assets/services/Balancer.jpg"
+import cabinet from "../assets/services/Cabinet.jpg"
+import ceiling from "../assets/services/Ceiling.jpg"
+import louvers from "../assets/services/Louvers.jpg"
+import kitchen from "../assets/services/ModularKitchen.jpg"
+import table from "../assets/services/table.jpg"
 
 function Gallery() {
   return (
@@ -8,9 +11,12 @@ function Gallery() {
       <h2>Our Work</h2>
 
       <div className="gallery-grid">
-        <img src={gallery1} alt="UPVC Interior Work" />
-        <img src={kitchen} alt="UPVC"/>
-        <img src={livingroom} alt="UPVC Living Room"/>
+        <img src={balancer} alt="UPVC Interior Work" />
+        <img src={cabinet} alt="UPVC Cabinet" />
+        <img src={ceiling} alt="UPVC Ceiling" />
+        <img src={louvers} alt="UPVC Louvers" />
+        <img src={kitchen} alt="UPVC Kitchen" />
+        <img src={table} alt="UPVC Table"/>
       </div>
     </section>
   );
