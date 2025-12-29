@@ -1,51 +1,59 @@
 import { useState } from "react";
+import logo from "../assets/bupvc.jpg"
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
       {/* HEADER */}
       <header className="header">
         <nav className="navbar">
-          <h1 className="logo">Barddhaman UPVC Interiors</h1>
+          <div className="logo" onClick={() => handleScroll("home")} style={{cursor: "pointer"}}>
+            <img src={logo} alt="Barddhaman UPVC Interiors Logo" />
+          </div>
 
+          {/* HAMBURGER */}
           <div
-            className="hamburger"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
+            className={`hamburger ${menuOpen ? "active" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
             ☰
           </div>
         </nav>
       </header>
 
-      {/* SIDEBAR MENU */}
-      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <span
-          className="close-btn"
-          onClick={() => setMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          ✕
-        </span>
+      {/* DROPDOWN MENU */}
+      <div className={`dropdown-menu ${menuOpen ? "open" : ""}`}>
+        <button onClick={() => handleScroll("home")}>Home</button>
+        <button onClick={() => handleScroll("services")}>Services</button>
+        <button onClick={() => handleScroll("gallery")}>Gallery</button>
+        <button onClick={() => handleScroll("about")}>About</button>
+        <button onClick={() => handleScroll("contact")}>Contact</button>
 
-        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-        <a href="#gallery" onClick={() => setMenuOpen(false)}>Gallery</a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-        <a href="/brochure.pdf" target="_blank" rel="noopener noreferrer">
+        <a
+          href="/brochure.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Brochure
         </a>
       </div>
 
-      {/* ✅ OVERLAY (ADD THIS HERE) */}
+      {/* LIGHT OVERLAY */}
       {menuOpen && (
         <div
-          className="overlay"
+          className="light-overlay"
           onClick={() => setMenuOpen(false)}
-        ></div>
+        />
       )}
     </>
   );

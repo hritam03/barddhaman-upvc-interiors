@@ -35,7 +35,7 @@ ul {
 }
 
 /* =========================
-   HEADER / NAVBAR
+   HEADER
 ========================= */
 
 .header {
@@ -49,69 +49,100 @@ ul {
 .navbar {
   max-width: 1200px;
   margin: auto;
-  padding: 1rem 1.5rem;
-
+  padding: 0.8rem 1.1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a1a1a;
+/* LOGO STYLING */
+.logo img {
+  height: 45px;        /* ✅ perfect size */
+  width: auto;
+  display: block;
 }
 
+/* =========================
+   HAMBURGER
+========================= */
 
-.nav-links a:hover {
-  color: #c89b3c;
-}
-/* HAMBURGER ICON (ALL SCREENS) */
 .hamburger {
   font-size: 1.8rem;
   cursor: pointer;
-  user-select: none;
+  transition: transform 0.3s ease;
 }
 
-/* SIDEBAR MENU */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 300px;
-  max-width: 80%;
-  height: 100vh;
-  background: #1a1a1a;
-  color: white;
+.hamburger.active {
+  transform: rotate(90deg);
+}
 
-  padding: 2rem 1.5rem;
+/* =========================
+   DROPDOWN MENU
+========================= */
+
+.dropdown-menu {
+  position: fixed; /* 🔥 IMPORTANT FIX */
+
+  top: 72px;
+  right: 1.5rem;
+
+  background: #1a1a1a;
+  border-radius: 10px;
+  min-width: 220px;
+
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.6rem;
+  padding: 1rem;
 
-  transition: right 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  pointer-events: none;
+
+  transition: all 0.25s ease;
   z-index: 2000;
-}
-.mobile-menu.open {
-  right: 0;
+  will-change: transform, opacity;
 }
 
-.mobile-menu a {
-  color: white;
-  font-size: 1.1rem;
+.dropdown-menu.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
-.close-btn {
-  font-size: 1.5rem;
+.dropdown-menu button,
+.dropdown-menu a {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: left;
   cursor: pointer;
-  align-self: flex-end;
+  padding: 0.3rem;
 }
 
-.overlay {
+.dropdown-menu button:hover,
+.dropdown-menu a:hover {
+  color: #c89b3c;
+}
+
+/* =========================
+   LIGHT OVERLAY
+========================= */
+
+.light-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.25);
   z-index: 1500;
+}
+
+/* =========================
+   SCROLL OFFSET
+========================= */
+
+section {
+  scroll-margin-top: 90px;
 }
 
 
@@ -448,6 +479,13 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 36px;
+  }
+}
+
 
 @media (max-width: 768px) {
   .nav-links {

@@ -8,7 +8,7 @@ function Hero() {
   return (
     <>
       {/* HERO SECTION (UNCHANGED VISUALLY) */}
-      <section className="hero">
+      <section className="hero" id="home">
         <img src={heroImage} alt="Modern UPVC Interior Design" />
 
         <div className="hero-content">
