@@ -144,6 +144,56 @@ ul {
 section {
   scroll-margin-top: 90px;
 }
+/* =========================
+   SERVICES ACCORDION
+========================= */
+
+/* .services-accordion {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 0.4rem;
+} */
+
+.services-accordion :hover {
+  color: #c89b3c;
+}
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.3rem;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.services-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* OPEN STATE */
+.services-body.open {
+  max-height: 320px;          /* 👈 visible height */
+  overflow-y: auto;           /* 👈 enable vertical scroll */
+}
+
+
+.service-item {
+  padding: 0.35rem 0.3rem;
+  font-size: 0.95rem;
+  color: #dddddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
 
 /* =========================
