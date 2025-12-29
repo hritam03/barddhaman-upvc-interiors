@@ -82,6 +82,7 @@ ul {
 
 .dropdown-menu {
   position: fixed; /* 🔥 IMPORTANT FIX */
+  max-width: calc(100vw - 3rem); /* 🔥 prevents overflow */
 
   top: 72px;
   right: 1.5rem;
@@ -204,7 +205,9 @@ section {
   position: relative;
   height: 85vh;
   overflow: hidden;
+  max-width: 100%;
 }
+
 
 .hero img {
   width: 100%;
@@ -656,14 +659,18 @@ section {
 .key-features h2 {
   font-size: 2.2rem;
   margin-bottom: 3rem;
-  white-space: nowrap;      /* 👈 keeps it in one line */
+  text-align: center;
+  padding: 0 1rem;
 }
 
 
 .features-grid {
   display: flex;
   gap: 2rem;
-  overflow-x: hidden;
+
+  overflow-x: hidden;  /* required for auto-scroll */
+  padding: 0 1rem;     /* prevents edge clipping */
+
   align-items: stretch;
 }
 
@@ -724,16 +731,18 @@ section {
 
 
 
-@media (max-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(4, 1fr); /* tablet */
+
+@media (max-width: 600px) {
+  .key-features h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
   }
 }
 
-@media (max-width: 600px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr); /* mobile */
-  }
+
+* {
+  max-width: 100vw;
 }
+
 
 
